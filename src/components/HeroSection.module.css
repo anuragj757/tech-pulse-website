@@ -1,0 +1,225 @@
+.heroSection {
+  padding-top: calc(var(--nav-height) + 80px);
+  padding-bottom: 60px;
+}
+
+.heroContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+  margin-bottom: var(--space-4xl);
+}
+
+.heroContent {
+  max-width: 600px;
+}
+
+.heroTitle {
+  margin: var(--space-lg) 0;
+}
+
+.heroDescription {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 550px;
+  line-height: 1.6;
+  margin-bottom: var(--space-2xl);
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* Email Card Visual */
+.heroVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.emailCard {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-editorial);
+  width: 100%;
+  max-width: 520px;
+  position: relative;
+  padding: var(--space-xl);
+  transition: transform var(--transition-base);
+}
+.emailCard:hover {
+  transform: translateY(-4px);
+}
+
+.emailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 2px solid var(--color-bg-dark);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.emailBrand {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.emailMeta {
+  display: flex;
+  gap: var(--space-md);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+}
+
+.emailTitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-accent-primary);
+  margin-bottom: var(--space-xl);
+}
+
+.emailStories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.story {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-lg);
+}
+.story:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.storyNumber {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-accent-primary);
+  margin-bottom: 4px;
+}
+
+.storyHeading {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+.storySection {
+  margin-bottom: var(--space-md);
+}
+
+.storyLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+  margin-bottom: 2px;
+}
+.storySection p {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+.storyLink {
+  font-size: 12px;
+}
+
+.emailFooter {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px dashed var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+}
+
+.dot {
+  color: var(--color-border);
+}
+
+/* Alignment marks */
+.markTopLeft, .markTopRight, .markBottomLeft, .markBottomRight {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-border);
+  line-height: 1;
+}
+.markTopLeft { top: -14px; left: -14px; }
+.markTopRight { top: -14px; right: -14px; }
+.markBottomLeft { bottom: -14px; left: -14px; }
+.markBottomRight { bottom: -14px; right: -14px; }
+
+
+/* Metrics Strip */
+.metricsStrip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-xl) 0;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metricValue {
+  font-size: clamp(32px, 4vw, 40px);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-bg-dark);
+}
+
+.metricLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.metricDivider {
+  width: 1px;
+  height: 48px;
+  background-color: var(--color-border);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+  .heroActions {
+    flex-direction: column;
+  }
+  .metricsStrip {
+    flex-wrap: wrap;
+    gap: var(--space-xl);
+    padding: var(--space-xl) 0;
+  }
+  .metricDivider {
+    display: none;
+  }
+  .metricItem {
+    width: 45%;
+  }
+}

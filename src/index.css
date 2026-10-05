@@ -1,0 +1,309 @@
+/* ============================================================
+   TECH PULSE — Premium Editorial Design System
+   ============================================================ */
+
+/* Fonts imported in index.html */
+
+/* ── CSS Custom Properties ──────────────────────────────── */
+:root {
+  --color-bg-primary:      #F5F3EE;
+  --color-bg-dark:         #111111;
+  --color-bg-white:        #FFFFFF;
+
+  --color-border:          #D8D5CE;
+  --color-border-dark:     rgba(245,243,238,0.18);
+
+  --color-text-primary:    #111111;
+  --color-text-secondary:  #66645F;
+  --color-text-light:      #F5F3EE;
+
+  --color-accent-primary:  #2457FF;
+  --color-accent-warning:  #E4572E;
+  --color-accent-success:  #1E7A52;
+
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   1.5rem;
+  --space-xl:   2rem;
+  --space-2xl:  3rem;
+  --space-3xl:  4rem;
+  --space-4xl:  6rem;
+  --space-5xl:  8rem;
+  --space-6xl:  10rem;
+
+  --font-sans:  'Inter', 'Geist', 'Helvetica Neue', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-xs:    0.75rem;     /* 12px */
+  --text-sm:    0.875rem;    /* 14px */
+  --text-base:  1.0625rem;   /* 17px */
+  --text-lg:    1.25rem;     /* 20px */
+  --text-xl:    1.5rem;      /* 24px */
+  --text-2xl:   2rem;        /* 32px */
+  --text-3xl:   2.5rem;      /* 40px */
+  --text-4xl:   3.25rem;     /* 52px */
+  --text-5xl:   4.5rem;      /* 72px */
+  --text-6xl:   6rem;        /* 96px */
+
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+
+  --shadow-editorial:   0 20px 60px rgba(17,17,17,0.08);
+
+  --transition-base: 300ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 500ms cubic-bezier(0.25, 1, 0.5, 1);
+
+  --max-width:  1280px;
+  --nav-height: 80px;
+}
+
+/* ── Reset ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  overflow-x: hidden;
+}
+
+img, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, textarea { font-family: inherit; outline: none; }
+ul, ol { list-style: none; }
+
+/* ── Typography ─────────────────────────────────────────── */
+.font-mono { font-family: var(--font-mono); }
+
+/* ── Layout ─────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 64px;
+}
+.section { padding: 120px 0; }
+.section-large { padding: 160px 0; }
+
+.bg-dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+.bg-dark .container {
+  border-color: var(--color-border-dark);
+}
+
+/* ── Typography Classes ─────────────────────────────────── */
+.label-small {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+}
+.bg-dark .label-small {
+  color: var(--color-accent-primary);
+}
+
+.headline-hero {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--color-text-primary);
+}
+.bg-dark .headline-hero {
+  color: var(--color-text-light);
+}
+
+.headline-section {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+}
+.bg-dark .headline-section {
+  color: var(--color-text-light);
+}
+
+.text-accent {
+  color: var(--color-accent-primary);
+}
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+.bg-dark .text-secondary {
+  color: #A09E98;
+}
+
+/* ── Buttons ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-bg-dark);
+}
+.btn-primary:hover {
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-bg-dark);
+}
+.btn-secondary:hover {
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
+  transform: translateY(-1px);
+}
+
+.btn-accent {
+  background: var(--color-accent-primary);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-accent-primary);
+}
+.btn-accent:hover {
+  background: var(--color-bg-dark);
+  border-color: var(--color-text-light);
+  transform: translateY(-1px);
+  color: var(--color-text-light);
+}
+
+.bg-dark .btn-secondary {
+  border-color: var(--color-text-light);
+  color: var(--color-text-light);
+}
+.bg-dark .btn-secondary:hover {
+  background: var(--color-text-light);
+  color: var(--color-bg-dark);
+}
+
+/* ── Links ──────────────────────────────────────────────── */
+.link-editorial {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--transition-base);
+}
+.bg-dark .link-editorial {
+  color: var(--color-text-light);
+}
+.link-editorial::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-accent-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-base);
+}
+.link-editorial:hover {
+  color: var(--color-accent-primary);
+}
+.link-editorial:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ── Dividers ───────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  width: 100%;
+}
+.divider-vertical {
+  width: 1px;
+  background-color: var(--color-border);
+  height: 100%;
+}
+.bg-dark .divider, .bg-dark .divider-vertical {
+  background-color: var(--color-border-dark);
+}
+
+/* ── Grids ──────────────────────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
+.grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-xl); }
+
+/* ── Utility ────────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .grid-4, .grid-5 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .container { padding: 0 32px; }
+}
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
+  .container { padding: 0 20px; }
+  .section { padding: 80px 0; }
+  .section-large { padding: 100px 0; }
+  
+  .headline-hero { font-size: 48px; }
+  .headline-section { font-size: 40px; }
+}
+@media (max-width: 480px) {
+  .headline-hero { font-size: 42px; }
+}
