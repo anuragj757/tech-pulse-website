@@ -42,6 +42,12 @@ export default function NewsletterSection() {
     }
   }
 
+  const handleReset = () => {
+    setStatus('idle')
+    setEmail('')
+    setErrorMessage('')
+  }
+
   return (
     <>
       {/* 13. EMAIL OUTPUT SECTION */}
@@ -131,6 +137,9 @@ export default function NewsletterSection() {
                   <div className={styles.successIcon}>&#10003;</div>
                   <h3 className={styles.successHeading}>TECH PULSE IS ON ITS WAY.</h3>
                   <p className={styles.successText}>Check your inbox in a moment.</p>
+                  <button onClick={handleReset} className={styles.resetBtn}>
+                    SEND ANOTHER EMAIL &rarr;
+                  </button>
                 </div>
               ) : (
                 <form className={styles.form} onSubmit={handleSubmit}>
