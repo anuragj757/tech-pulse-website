@@ -17,8 +17,22 @@ export default function Footer() {
         </div>
 
         <div className={styles.footerLinks}>
-          <a href="https://www.linkedin.com/in/anurag-jadhav-1b84a2371/" target="_blank" rel="noopener noreferrer" className={`link-editorial ${styles.footerLink}`}>LinkedIn</a>
-          <a href="https://github.com/anuragj757" target="_blank" rel="noopener noreferrer" className={`link-editorial ${styles.footerLink}`}>GitHub</a>
+          <a 
+            href="https://www.linkedin.com/in/anurag-jadhav-1b84a2371/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={`link-editorial ${styles.footerLink}`}
+          >
+            LinkedIn
+          </a>
+          <a 
+            href="https://github.com/anuragj757" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={`link-editorial ${styles.footerLink}`}
+          >
+            GitHub
+          </a>
         </div>
 
       </div>
